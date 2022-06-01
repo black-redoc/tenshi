@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50),
+                borderRadius: BorderRadius.circular(10),
               )
             )
           ),

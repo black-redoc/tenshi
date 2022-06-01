@@ -37,7 +37,7 @@ class _LoginEmailState extends State<LoginEmail> {
             ),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50),
+                borderRadius: BorderRadius.circular(10),
               )
             )
           ),
@@ -77,5 +77,6 @@ class _LoginEmailState extends State<LoginEmail> {
 
   void _login() {
     print("login");
+    Navigator.of(context).pushNamed("/stepper1");
   }
 }
