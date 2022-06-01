@@ -46,7 +46,7 @@ class Stepper1 extends StatelessWidget {
             children: <Widget>[
               btn(
                 child: Icon(Icons.arrow_forward_ios_outlined),
-                onPressed: () {},
+                onPressed: () => _actionNext(context),
                 color: Colors.blue,
                 width: 100.0
               )
@@ -55,5 +55,9 @@ class Stepper1 extends StatelessWidget {
         ]
       )
     );
+  }
+
+  void _actionNext(BuildContext context) {
+    Navigator.of(context).pushNamed("/stepper2");
   }
 }
