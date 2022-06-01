@@ -10,6 +10,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   Widget btn({child, onPressed, color}) {
     return Container(
+      width: 300,
       margin: EdgeInsets.symmetric(vertical: 2.5, horizontal: 10),
       child: ConstrainedBox(
         constraints: BoxConstraints(minWidth: double.infinity, minHeight: 40),
@@ -70,9 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       TextButton(
                         child: Text("Login"),
-                        onPressed: () {
-                          print("Login btn");
-                        },
+                        onPressed: _loginEmail,
                       )
                     ],
                   )
@@ -82,23 +81,17 @@ class _LoginPageState extends State<LoginPage> {
                 children: <Widget>[
                   btn(
                     child: Icon(Icons.g_mobiledata_outlined),
-                    onPressed: () {
-                      print("SignUp google");
-                    },
+                    onPressed: _loginGoogle,
                     color: Colors.red
                   ),
                   btn(
                     child: Icon(Icons.facebook),
-                    onPressed: () {
-                      print("SignUp facebook");
-                    },
+                    onPressed: _loginFacebook,
                     color: Colors.indigo
                   ),
                   btn(
                     child: Icon(Icons.apple),
-                    onPressed: () {
-                      print("SignUp apple");
-                    },
+                    onPressed: _loginAppleid,
                     color: Colors.black
                   ),
                 ],
@@ -108,5 +101,19 @@ class _LoginPageState extends State<LoginPage> {
         ),
       )
     );
+  }
+
+  void _loginGoogle() {
+    print("google_login");
+  }
+  void _loginFacebook() {
+    print("facebook_login");
+  }
+  void _loginAppleid() {
+    print("apple_login");
+  }
+
+  void _loginEmail() {
+    print("login email");
   }
 }
