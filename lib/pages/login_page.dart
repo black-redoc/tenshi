@@ -115,5 +115,6 @@ class _LoginPageState extends State<LoginPage> {
 
   void _loginEmail() {
     print("login email");
+    Navigator.of(context).pushNamed("/loginEmail");
   }
 }
