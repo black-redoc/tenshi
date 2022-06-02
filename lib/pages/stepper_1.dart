@@ -6,9 +6,9 @@ class Stepper1 extends StatelessWidget {
   Widget btn({child, onPressed, color, width}) {
     return Container(
       width: width,
-      margin: EdgeInsets.symmetric(vertical: 2.5, horizontal: 10),
+      margin: const EdgeInsets.symmetric(vertical: 2.5, horizontal: 10),
       child: ConstrainedBox(
-        constraints: BoxConstraints(minWidth: double.infinity, minHeight: 40),
+        constraints: const BoxConstraints(minWidth: double.infinity, minHeight: 40),
         child: ElevatedButton(
           child: child,
           onPressed: onPressed,
@@ -34,7 +34,7 @@ class Stepper1 extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           Image.asset("assets/cat1.png"),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
             child: Text(
               "Tensi app te permite registrar varios gatitos para sus revisiones.",
@@ -45,7 +45,7 @@ class Stepper1 extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               btn(
-                child: Icon(Icons.arrow_forward_ios_outlined),
+                child: const Icon(Icons.arrow_forward_ios_outlined),
                 onPressed: () => _actionNext(context),
                 color: Colors.blue,
                 width: 100.0
