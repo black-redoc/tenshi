@@ -75,7 +75,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
                   borderRadius: BorderRadius.circular(10)
                 ),
                 child: SfDateRangePicker(
-                  view: DateRangePickerView.month,
+                  showNavigationArrow: true,
                   minDate: DateTime.now(),
                   onSelectionChanged: _onSelectedDate,
                 ),
