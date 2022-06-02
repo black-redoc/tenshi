@@ -5,6 +5,7 @@ import 'package:tenshi/pages/login_email.dart';
 import 'package:tenshi/pages/login_page.dart';
 import 'package:tenshi/pages/stepper_1.dart';
 import 'package:tenshi/pages/stepper_2.dart';
+import 'package:tenshi/pages/veterinary_enable.dart';
 
 class Routes {
   static final Map<String, WidgetBuilder> _myRoutes = {
@@ -13,7 +14,8 @@ class Routes {
     "/stepper1": (BuildContext context) => const Stepper1(),
     "/stepper2": (BuildContext context) => const Stepper2(),
     "/dashboard": (BuildContext context) => const Dashboard(),
-    "/appointment": (BuildContext context) => const AppointmentPage()
+    "/appointment": (BuildContext context) => const AppointmentPage(),
+    "/veterinaryEnable": (BuildContext context) => const VeterinaryEnable()
   };
 
   static Map<String, WidgetBuilder> get router => _myRoutes;
