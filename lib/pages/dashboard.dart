@@ -22,9 +22,7 @@ class _DashboardState extends State<Dashboard> {
   }
 
   Widget _pets() {
-    return Container(
-      height: 200,
-      color: Colors.blueGrey,
+    return Expanded(
       child: ListView(
         padding: const EdgeInsets.all(0),
         shrinkWrap: true,
