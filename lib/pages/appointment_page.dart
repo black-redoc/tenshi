@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+import 'package:tenshi/widgets/floating_button.dart';
+import 'package:tenshi/widgets/text_large.dart';
+import 'package:tenshi/widgets/text_medium.dart';
+import 'package:tenshi/widgets/text_small.dart';
 
 class AppointmentPage extends StatefulWidget {
   const AppointmentPage({Key? key}) : super(key: key);
@@ -9,29 +13,6 @@ class AppointmentPage extends StatefulWidget {
 }
 
 class _AppointmentPageState extends State<AppointmentPage> {
-  Widget btn({Widget? child, Function()? onPressed, Color? color, double? width}) {
-    return Container(
-      width: width,
-      margin: const EdgeInsets.symmetric(vertical: 2.5, horizontal: 10),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(minWidth: double.infinity, minHeight: 40),
-        child: ElevatedButton(
-          onPressed: onPressed,
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(
-              color!
-            ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              )
-            )
-          ),
-          child: child,
-        ),
-      ),
-    );
-  }
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -44,13 +25,10 @@ class _AppointmentPageState extends State<AppointmentPage> {
         child: SafeArea(
           child: Column(
             children: <Widget>[
-              const Text(
+              const TextLargeWidget(
                 "Nueva Cita",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold
-                )
+                fontWeight: FontWeight.bold,
+                color: Colors.white
               ),
               const SizedBox(height: 20),
               Padding(
@@ -58,12 +36,9 @@ class _AppointmentPageState extends State<AppointmentPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: const <Widget>[
-                    Text(
+                    TextMediumWidget(
                       "Selecciona una cita",
-                      style:TextStyle(
-                        color: Colors.white,
-                        fontSize: 16
-                      )
+                      color: Colors.white,
                     )
                   ],
                 ),
@@ -80,14 +55,14 @@ class _AppointmentPageState extends State<AppointmentPage> {
                   onSelectionChanged: _onSelectedDate,
                 ),
               ),
-              btn(
-                child: const Text(
-                  "Ver veterinarios disponibles",
-                  style: TextStyle(color: Colors.blueGrey)
-                ),
+              FloatingButtonWidget(
                 onPressed: () {},
-                color: Colors.white,
-                width: 300
+                backgroundColor: Colors.white,
+                width: 300,
+                child: const TextSmallWidget(
+                  "Ver veterinarios disponibles",
+                  color: Colors.black
+                ),
               )
             ]
           )

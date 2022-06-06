@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tenshi/widgets/floating_button.dart';
+import 'package:tenshi/widgets/text_field.dart';
+import 'package:tenshi/widgets/text_medium.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -8,49 +11,12 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  Widget btn({child, onPressed, color}) {
-    return Container(
-      width: 300,
-      margin: EdgeInsets.symmetric(vertical: 2.5, horizontal: 10),
-      child: ConstrainedBox(
-        constraints: BoxConstraints(minWidth: double.infinity, minHeight: 40),
-        child: ElevatedButton(
-          child: child,
-          onPressed: onPressed,
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(
-              color
-            ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              )
-            )
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget textField({label}) {
-    return SizedBox(
-      width: 300,
-      child: TextFormField(
-        decoration: InputDecoration(
-          label: Text("$label"),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10)
-          )
-        ),
-      ),
-    );
-  }
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         child: SizedBox(
           height: size.height,
           child: Column(
@@ -65,13 +31,13 @@ class _LoginPageState extends State<LoginPage> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  textField(label: "email"),
+                  const TextFieldWidget(label: "email"),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
-                        child: Text("Login"),
                         onPressed: _loginEmail,
+                        child: const TextMediumWidget("Login"),
                       )
                     ],
                   )
@@ -79,20 +45,20 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Column(
                 children: <Widget>[
-                  btn(
-                    child: Icon(Icons.g_mobiledata_outlined),
+                  FloatingButtonWidget(
                     onPressed: _loginGoogle,
-                    color: Colors.red
+                    backgroundColor: Colors.red,
+                    child: const Icon(Icons.g_mobiledata_outlined)
                   ),
-                  btn(
-                    child: Icon(Icons.facebook),
+                  FloatingButtonWidget(
                     onPressed: _loginFacebook,
-                    color: Colors.indigo
+                    backgroundColor: Colors.indigo,
+                    child: const Icon(Icons.facebook)
                   ),
-                  btn(
-                    child: Icon(Icons.apple),
+                  FloatingButtonWidget(
                     onPressed: _loginAppleid,
-                    color: Colors.black
+                    backgroundColor: Colors.black,
+                    child: const Icon(Icons.apple),
                   ),
                 ],
               )

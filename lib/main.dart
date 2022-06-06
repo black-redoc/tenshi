@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Tenshi',
       routes: Routes.router,
-      initialRoute: "/veterinaryEnable",
+      initialRoute: "/appointment",
     );
   }
 }

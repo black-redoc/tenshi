@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tenshi/widgets/text_large.dart';
 
 class VeterinaryEnable extends StatefulWidget {
   const VeterinaryEnable({Key? key}) : super(key: key);
@@ -20,13 +21,10 @@ class _VeterinaryEnableState extends State<VeterinaryEnable> {
         child: SafeArea(
           child: Column(
             children: <Widget>[
-              const Text(
+              const TextLargeWidget(
                 "Seleccione veterinaria",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
-                )
+                color: Colors.white,
+                fontWeight: FontWeight.bold
               ),
               const SizedBox(height: 10),
               Expanded(

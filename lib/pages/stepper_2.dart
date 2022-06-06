@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:tenshi/widgets/floating_button.dart';
+import 'package:tenshi/widgets/text_field.dart';
+import 'package:tenshi/widgets/text_medium.dart';
 
 class Stepper2 extends StatefulWidget {
   const Stepper2({Key? key}) : super(key: key);
@@ -8,48 +12,8 @@ class Stepper2 extends StatefulWidget {
 }
 
 class _Stepper2State extends State<Stepper2> {
-  Widget textField({label, isNumber}) {
-    return SizedBox(
-      width: 300,
-      child: TextFormField(
-        keyboardType: isNumber ? TextInputType.number : TextInputType.text,
-        decoration: InputDecoration(
-          label: Text("$label"),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10)
-          )
-        ),
-      ),
-    );
-  }
-
-  Widget btn({child, onPressed, color, width, height}) {
-    return SizedBox(
-      width: width,
-      height: height,
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(minWidth: double.infinity, minHeight: 40),
-        child: ElevatedButton(
-          child: child,
-          onPressed: onPressed,
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(
-              color
-            ),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              )
-            )
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
@@ -58,25 +22,25 @@ class _Stepper2State extends State<Stepper2> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               const SizedBox(height: 10),
-              Center(child: textField(label: "Nombre", isNumber: false)),
+              const Center(child: TextFieldWidget(label: "Nombre", isNumber: false)),
               const SizedBox(height: 10),
-              textField(label: "Edad", isNumber: true),
+              const TextFieldWidget(label: "Edad", isNumber: true),
               const SizedBox(height: 10),
-              btn(
-                color: Colors.white,
-                child: Image.asset("assets/upimage.png"),
+              FloatingButtonWidget(
+                backgroundColor: Colors.white,
                 onPressed: _upImage,
                 width: 60.0,
-                height: 60.0
+                height: 60.0,
+                child: Image.asset("assets/upimage.png"),
               ),
-              const Text("Subir foto"),
+              const TextMediumWidget("Subir foto"),
               const SizedBox(height: 10),
-              btn(
-                color: Colors.blue,
-                child: const Icon(Icons.arrow_forward_ios_outlined),
+              FloatingButtonWidget(
+                backgroundColor: Colors.blue,
                 onPressed: () {},
                 width: 100.0,
-                height: 40.0
+                height: 40.0,
+                child: const Icon(Icons.arrow_forward_ios_outlined),
               ),
               const SizedBox(height: 10),
               Center(
@@ -100,7 +64,11 @@ class _Stepper2State extends State<Stepper2> {
     );
   }
 
-  void _upImage() {
+  void  _upImage() async {
+    final _picker = ImagePicker();
+    final image = await _picker.pickImage(
+      source: ImageSource.gallery
+    );
     print("uploading image");
   }
 }

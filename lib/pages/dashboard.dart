@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tenshi/widgets/text_large.dart';
+import 'package:tenshi/widgets/text_medium.dart';
+import 'package:tenshi/widgets/text_small.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -38,20 +41,14 @@ class _DashboardState extends State<Dashboard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Image.asset("assets/cat.png", width: 100),
-                    const Text(
+                    const TextMediumWidget(
                       "Mishi1",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold
-                      ),
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold
                     ),
-                    const Text(
+                    const TextSmallWidget(
                       "1 year",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 8
-                      ),
+                      color: Colors.blue,
                     )
                   ]
                 )
@@ -64,20 +61,14 @@ class _DashboardState extends State<Dashboard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Image.asset("assets/cat.png", width: 100),
-                    const Text(
+                    const TextMediumWidget(
                       "Mishi1",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold
-                      ),
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold
                     ),
-                    const Text(
+                    const TextSmallWidget(
                       "1 year",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 8
-                      ),
+                      color: Colors.blue
                     )
                   ]
                 )
@@ -95,20 +86,14 @@ class _DashboardState extends State<Dashboard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Image.asset("assets/cat.png", width: 100),
-                    const Text(
+                    const TextMediumWidget(
                       "Mishi1",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold
-                      ),
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold
                     ),
-                    const Text(
+                    const TextSmallWidget(
                       "1 year",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 8
-                      ),
+                      color: Colors.blue,
                     )
                   ]
                 )
@@ -121,20 +106,14 @@ class _DashboardState extends State<Dashboard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Image.asset("assets/cat.png", width: 100),
-                    const Text(
+                    const TextMediumWidget(
                       "Mishi1",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold
-                      ),
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold
                     ),
-                    const Text(
+                    const TextSmallWidget(
                       "1 year",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 8
-                      ),
+                      color: Colors.blue,
                     )
                   ]
                 )
@@ -170,13 +149,10 @@ class _DashboardState extends State<Dashboard> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const <Widget>[
-                  Text(
+                  TextLargeWidget(
                     "Dashboard",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold
-                    ),
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold
                   ),
                   Icon(Icons.access_alarms, color: Colors.white)
                 ]
@@ -194,19 +170,13 @@ class _DashboardState extends State<Dashboard> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const <Widget>[
-                    Text(
+                    TextMediumWidget(
                       "Proximo examen:",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12
-                      )
+                      color: Colors.white,
                     ),
-                    Text(
+                    TextMediumWidget(
                       "15/Jun/2022",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18
-                      )
+                      color: Colors.white,
                     )
                   ]
                 ),
@@ -214,19 +184,13 @@ class _DashboardState extends State<Dashboard> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const <Widget>[
-                    Text(
+                    TextMediumWidget(
                       "Proxima cita:",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12
-                      )
+                      color: Colors.white,
                     ),
-                    Text(
+                    TextMediumWidget(
                       "15/Jun/2022",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18
-                      )
+                      color: Colors.white,
                     )
                   ]
                 ),
@@ -254,24 +218,18 @@ class _DashboardState extends State<Dashboard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const Text(
+                  const TextMediumWidget(
                     "Ultimos Resultados:",
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold
-                    ),
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold
                   ),
                   Row(
                     children: const <Widget>[
                       Icon(Icons.bloodtype, size: 15, color: Colors.blue),
                       SizedBox(width: 10),
-                      Text(
+                      TextSmallWidget(
                         "Ver resultados examen de sangre.",
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 10
-                        )
+                        color: Colors.blue,
                       )
                     ],
                   ),
@@ -279,12 +237,9 @@ class _DashboardState extends State<Dashboard> {
                     children: const <Widget>[
                       Icon(Icons.bloodtype, size: 15, color: Colors.blue),
                       SizedBox(width: 10),
-                      Text(
+                      TextSmallWidget(
                         "Ver resultados uroanalisis.",
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontSize: 10
-                        )
+                        color: Colors.blue,
                       )
                     ],
                   )
