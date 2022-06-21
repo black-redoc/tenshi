@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tenshi/providers/login/login_email_provider.dart';
 import 'package:tenshi/widgets/floating_button.dart';
 import 'package:tenshi/widgets/text_field.dart';
 import 'package:tenshi/widgets/text_medium.dart';
@@ -11,6 +13,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController? _emailController;
+
+  @override
+  void initState() {
+    super.initState();
+    _emailController = TextEditingController();
+  }
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -31,7 +40,10 @@ class _LoginPageState extends State<LoginPage> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const TextFieldWidget(label: "email"),
+                  TextFieldWidget(
+                    label: "email",
+                    textController: _emailController,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -80,7 +92,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _loginEmail() {
-    print("login email");
+    final loginUsernameProvider = Provider.of<LoginUsernameProvider>(context, listen: false);
+    loginUsernameProvider.username = _emailController!.text;
     Navigator.of(context).pushNamed("/loginEmail");
   }
 }

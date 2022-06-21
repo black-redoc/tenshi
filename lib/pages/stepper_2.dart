@@ -22,9 +22,9 @@ class _Stepper2State extends State<Stepper2> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               const SizedBox(height: 10),
-              const Center(child: TextFieldWidget(label: "Nombre", isNumber: false)),
+              Center(child: TextFieldWidget(label: "Nombre", isNumber: false)),
               const SizedBox(height: 10),
-              const TextFieldWidget(label: "Edad", isNumber: true),
+              TextFieldWidget(label: "Edad", isNumber: true),
               const SizedBox(height: 10),
               FloatingButtonWidget(
                 backgroundColor: Colors.white,
